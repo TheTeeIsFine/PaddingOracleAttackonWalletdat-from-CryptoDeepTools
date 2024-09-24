@@ -1,0 +1,143 @@
+Hello everyone!
+
+I would like to ask if anyone else uses the "PaddingOracleAttackonWalletdat" tool from CryptoDeepTools and has the same problems as me?
+
+Everything works perfectly in the tutorial and the video, but if you carry out the entire process in Google Colab, you keep running into problems!
+
+Note, I have the ExploitDarlenePRO.zip and also a wallet file, all data, etc.
+
+1. Problem: If I run the command and just change my BTC address, I get an error message:
+
+Command: !./msfvenom XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -p modules/exploits/ExploitDarlenePRO LHOST=172.28.0.12 -f RB -o decode_core.rb -p bitcoin/src/crypto LHOST=172.28.0.12 -f CPP -o aes.cpp -p bitcoin/src/crypto LHOST=172.28.0.12 -f DAT -o wallet.dat
+
+(BTC address is made anonymous!)
+
+Error:
+Could not find simplecov-0.18.2 in any of the sources
+Run `bundle install` to install missing gems
+
+This error does not appear in the tutorial, although I am working on the finished runtime from CryptoDeepTech 😵‍💫😵‍💫😵‍💫
+
+I perform the following steps:
+!gem install bundler
+!bundle install (installation error)
+!sudo apt-get install libpcap-dev
+!gem install pcaprub -v '0.13.3'
+!bundle install
+
+Now I have installed everything and am running the command again:
+
+!./msfvenom XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -p modules/exploits/ExploitDarlenePRO LHOST=172.28.0.12 -f RB -o decode_core.rb -p bitcoin/src/crypto LHOST=172.28.0.12 -f CPP -o aes.cpp -p bitcoin/src/crypto LHOST=172.28.0.12 -f DAT -o wallet.dat
+
+Next error 🤮🤮🤮
+
+Error: invalid format: dat
+
+Framework Executable Formats [--format <value>]
+===============================================
+
+    Name
+    ----
+    asp
+    aspx
+    aspx-exe
+    axis2
+    dll
+    ducky-script-psh
+    elf
+    elf-so
+    exe
+    exe-only
+    exe-service
+    exe-small
+    hta-psh
+    jar
+    jsp
+    loop-vbs
+    macho
+    msi
+    msi-nouac
+    osx-app
+    psh
+    psh-cmd
+    psh-net
+    psh-reflection
+    python-reflection
+    vba
+    vba-exe
+    vba-psh
+    vbs
+    war
+
+Framework Transform Formats [--format <value>]
+==============================================
+
+    Name
+    ----
+    base32
+    base64
+    bash
+    c
+    csharp
+    dw
+    dword
+    go
+    golang
+    hex
+    java
+    js_be
+    js_le
+    masm
+    nim
+    nimlang
+    num
+    octal
+    perl
+    pl
+    powershell
+    ps1
+    py
+    python
+    raw
+    rb
+    ruby
+    rust
+    rustlang
+    sh
+    vbapplication
+    vbscript
+    zig
+
+This time it does not recognize the format "dat", although everything works perfectly in the tutorial‼️‼️‼️
+
+Asked ChatGPT because I'm at my wits end and ChatGPT threw out the following command:
+
+!./msfvenom XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -p modules/exploits/ExploitDarlenePRO LHOST=172.28.0.12 -f RB -o decode_core.rb -p bitcoin/src/crypto LHOST=172.28.0.12 -f CPP -o aes.cpp -p bitcoin/src/crypto LHOST=172.28.0.12 -f raw -o wallet.dat
+
+    Command explanation:
+    msfvenom: The tool for generating payloads and executables.
+    BTC address: The unique identifier (could be your token or a parameter that is important for your scenario).
+    -p: Specifies the payload or module.
+    modules/exploits/ExploitDarlenePRO: The first module you use.
+    LHOST=172.28.0.12: Sets the local IP address that the payload will connect back to.
+    -f RB -o decode_core.rb: Generates the first payload in Ruby (RB) format and stores it in the decode_core.rb file.
+    -f CPP -o aes.cpp: Generates a second payload in C++ (CPP) format and stores it in the aes.cpp file.
+    -f raw -o wallet.dat: Generates a third payload in raw (raw) format and stores it in the wallet.dat file.
+    The raw format was chosen here for the wallet.dat file because the originally specified DAT format is not supported.
+
+    !!!This command should now run without errors.!!! (Words from ChatGPT!)
+
+I executed this command as ChatGPT told me and then, OH WONDER OH WONDER, there was another error 😵‍💫😵‍💫😵‍💫
+
+Error: Error: invalid payload: bitcoin/src/crypto
+
+Everything ChatGPT advised me to do after that didn't help and that's why I'd like to ask if anyone here knows a solution, because CryptoDeepTech isn't answering!
+
+Is it fake or real?
+
+Has anyone had this happen using any of his tools?
+
+Feel free to reply to:
+M: andreas.contact.office@gmail.com
+T: @HappyVibesOnly2024
+
